@@ -1,0 +1,13 @@
+spring:
+  profiles:
+    include:
+      - common
+      - db
+      - security
+      - kafka
+    active:
+
+
+
+
+
