@@ -15,27 +15,6 @@ import java.util.Map;
 
 @Configuration
 public class KafkaProducerConfig {
-
-//    @Bean
-//    public Map<String, Object> producerConfig() {
-//        Map<String, Object> props = new HashMap<>();
-//        props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
-//        props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
-//        props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class);
-//        return props;
-//    }
-//
-//    @Bean
-//    public ProducerFactory<String, Object> producerFactory() {
-//        return new DefaultKafkaProducerFactory<>(producerConfig());
-//    }
-//
-//    @Bean
-//    public KafkaTemplate<String, Object> kafkaTemplate(ProducerFactory<String, Object> producerFactory) {
-//        return new KafkaTemplate<>(producerFactory);
-//    }
-
-
         @Value("${spring.kafka.producer.bootstrap-servers}")
         private String bootstrapServers;
 
@@ -52,8 +31,4 @@ public class KafkaProducerConfig {
         public KafkaTemplate<String, Object> kafkaTemplate() {
             return new KafkaTemplate<>(producerFactory());
         }
-
-
-
-
     }
